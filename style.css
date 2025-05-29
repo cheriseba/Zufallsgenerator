@@ -1,0 +1,101 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    /* Hintergrundbild + sanftes overlay für Lesbarkeit */
+    background: 
+        url('bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+}
+.slot-machine {
+    box-shadow: 0 12px 28px #0003, 0 1.5px 5px #0001;
+    padding: 2.7rem 2.5rem 1.5rem 2.5rem;
+    background: #fff6;
+    border-radius: 2.5rem;
+    border: 3px solid #b39ddb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.slots-row {
+    display: flex;
+    justify-content: center;
+    gap: 2.3rem;
+    margin-bottom: 2.5rem;
+}
+.slot {
+    width: 220px;
+    height: 72px;
+    background: linear-gradient(#eab6e6 60%, #ac81ed 100%);
+    border: 2px solid #ff00cc37;
+    border-radius: 1.1rem;
+    box-shadow: 0 4px 18px #b793f62c, 0 0.5px 3px #0001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #95029a;
+    transition: box-shadow 0.2s;
+    margin: 0 2px;
+    letter-spacing: 0.02em;
+    user-select: none;
+    animation: slotIn 0.3s;
+}
+.slot-wort, #wort {
+    width: 600px;
+    max-width: 95vw;
+    overflow-wrap: break-word;
+}
+
+.slot.active {
+    background: #d7d1b4;
+    border-color: #ffd54f;
+    color: #e65100;
+    box-shadow: 0 0 20px #ffe08288, 0 4px 16px #b39ddb2c;
+    animation: slotPop 0.32s;
+}
+@keyframes slotPop {
+    0% { transform: scale(1.08); }
+    65% { transform: scale(0.97);}
+    90% { transform: scale(1.02);}
+    100%{ transform: scale(1);}
+}
+@keyframes slotIn {
+    0% { opacity: 0; transform: translateY(-20%);}
+    100%{ opacity: 1; transform: none;}
+}
+.slot-label {
+    text-align: center;
+    color: #8e24aa;
+    font-size: 0.99rem;
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.03em;
+}
+#start {
+    padding: 0.95rem 2.3rem;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 2.5px 12px #b793f644;
+    background: linear-gradient(90deg, #8945ffdd, #ba68c8ee 90%);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    margin-bottom: 0.6rem;
+    transition: background 0.2s;
+}
+#start:active {
+    background: linear-gradient(90deg,#ba68c8,#7e57c2 90%);
+}
+.hint {
+    margin-top: 2.5rem;
+    color: #4527a080;
+    letter-spacing: 0.05em;
+    font-size: 1.08rem;
+}
